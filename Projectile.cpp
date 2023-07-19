@@ -1,12 +1,8 @@
 #include "Projectile.h"
 #include <cmath>
 
-class Projectile
-{
-private:
-  double x_, y_, angle_, dist_, traveled_;
-public:
-  Projectile(double x, double y, double angle, double dist) {
+
+Projectile::Projectile(double x, double y, double angle, double dist) {
     x_ = x;
     y_ = y;
     angle_ = angle;
@@ -14,19 +10,18 @@ public:
     traveled_ = 0;
   };
 
-  double my_x() {return x_ ;}
-  double my_y() {return y_ ;}
+  double Projectile::my_x() {return x_ ;}
+  double Projectile::my_y() {return y_ ;}
 
-  bool isOut() {
+  bool Projectile::isOut() {
     return dist_ < traveled_;
   };
 
-  void move() {
+  void Projectile::move() {
     x_ += cos(angle_ * 3.14 / 180);
     y_ += sin(angle_ * 3.14 / 180);
     traveled_ += 1;
   }
 
-  ~Projectile();
-};
+  Projectile::~Projectile() = default;
 
