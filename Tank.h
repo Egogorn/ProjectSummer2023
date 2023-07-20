@@ -1,5 +1,13 @@
 #pragma once
 
+#define WX 800
+#define WY 800
+#define TOP 50
+#define LEFT 50
+#define RIGHT 750
+#define BOTTOM 750
+
+
 class Field;
 
 class Tank
@@ -23,5 +31,5 @@ public:
   int my_hp();
   double enemy_x(Field& field);
   double enemy_y(Field& field);
-
+  double getAngle();
 };
